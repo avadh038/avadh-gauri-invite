@@ -469,6 +469,11 @@ html[lang=hi] .scr-t2,html[lang=mr] .scr-t2{text-transform:none;letter-spacing:.
 .floral.revealed dl,.floral.revealed>.dv{animation:tkIn .7s .15s cubic-bezier(.2,.8,.2,1) both}
 @media(prefers-reduced-motion:reduce){.scr-coin{animation:none}.scr{transition:none}.floral.revealed,.floral.revealed dl,.floral.revealed>.dv,.floral.revealed .scr-fx i{animation:none}}
 
+/* hero fits one visible screen: text keeps its size, the picture takes the remaining space, the cue stays on screen */
+.hero{height:100vh;min-height:min-content}
+@supports(height:100svh){.hero{height:100svh}}
+.hero img.scene{flex:1 1 0;min-height:160px;height:auto!important;max-height:none;object-fit:cover;object-position:50% 35%}
+.hero .top{flex:none}.hero .cue{flex:none}
 /* hero scroll cue: plain text with a small arrow */
 .hero .cue{margin:14px auto 22px;gap:4px;color:var(--bur);opacity:.8}
 .hero .cue svg{width:20px;height:20px;animation:cueB 2.4s ease-in-out infinite}
